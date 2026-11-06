@@ -20,6 +20,8 @@ def build_text(row: dict, cfg: dict) -> str:
 
 
 def _mac_notification(title: str, body: str) -> None:
+    if sys.platform != "darwin":
+        return  # chỉ có trên macOS; Windows/Linux dùng Telegram
     body, title = body.replace('"', "'"), title.replace('"', "'")
     subprocess.run(["osascript", "-e", f'display notification "{body[:200]}" with title "{title}"'], check=False)
 
