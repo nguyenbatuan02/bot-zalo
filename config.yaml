@@ -1,0 +1,39 @@
+# Danh sách nhóm: ID số hoặc tên slug trong URL facebook.com/groups/<id>
+groups:
+  - "560428288303981"
+  - "865240956608703"
+  - "248865452358127"
+  - "330036855098294"
+  - "1843813745805317"
+  - "1165668047549128"
+  - "352244201164369"
+  - "536457513557977"
+  - "2818750415117377"
+  - "noithatoto.dochoixehoi"
+
+
+
+# Chỉ giữ bài chứa ít nhất 1 từ khóa (để trống [] = lấy mọi bài)
+keywords:
+  - "cần"
+  - "mua"
+  - "bán"
+
+# Chỉ lưu bài có số điện thoại?
+require_phone: true
+
+# Quét các bài từ N ngày trước tới lúc chạy; gặp bài cũ hơn thì dừng nhóm đó (bỏ dòng này = chỉ theo scroll_times)
+max_age_days: 0.25
+
+scroll_times: 100         # số lần cuộn tối đa mỗi nhóm (mức trần, tránh cuộn vô hạn)
+delay_between_scrolls: [3, 7]   # giây, random trong khoảng
+delay_between_groups: [20, 45]
+headless: false
+
+# --- Chế độ --watch ---
+watch_interval_minutes: 15   # nghỉ bao nhiêu phút giữa 2 vòng quét
+notify_within_hours: 3       # chỉ báo bài đăng trong N giờ gần nhất (tránh dồn thông báo lần đầu)
+message_template: "Chào {author}, mình thấy bài bạn đăng nên nhắn hỏi thêm ạ."
+
+# --- Trang web web.py ---
+daily_limit: 100   # chỉ để hiển thị bộ đếm số tin nhắn trong ngày
